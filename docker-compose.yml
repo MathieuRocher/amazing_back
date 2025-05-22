@@ -34,11 +34,17 @@ services:
       - form
       - review
     environment:
+      - GATEWAY_PORT=${GATEWAY_PORT}
+      - REVIEW_HOST=review
+      - REVIEW_PORT=${REVIEW_PORT}
+      - FORM_HOST=form
+      - FORM_PORT=${FORM_PORT}
+      - MARIADB_HOST=${MARIADB_HOST}
+      - MARIADB_PORT=${MARIADB_PORT}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
       - REDIS_URL=${REDIS_URL}
-      - DB_HOST=${MARIADB_HOST}
-      - DB_USER=${MARIADB_USER}
-      - DB_PASSWORD=${MARIADB_PASSWORD}
-      - DB_NAME=${MARIADB_DATABASE}
 
   ### Microservice Form
   form:
@@ -54,10 +60,11 @@ services:
     labels:
       - "traefik.enable=false"
     environment:
-      - DB_HOST=${MARIADB_HOST}
-      - DB_USER=${MARIADB_USER}
-      - DB_PASSWORD=${MARIADB_PASSWORD}
-      - DB_NAME=${MARIADB_DATABASE}
+      - MARIADB_HOST=${MARIADB_HOST}
+      - MARIADB_PORT=${MARIADB_PORT}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
 
   ### Microservice Review
   review:
@@ -73,10 +80,11 @@ services:
     labels:
       - "traefik.enable=false"
     environment:
-      - DB_HOST=${MARIADB_HOST}
-      - DB_USER=${MARIADB_USER}
-      - DB_PASSWORD=${MARIADB_PASSWORD}
-      - DB_NAME=${MARIADB_DATABASE}
+      - MARIADB_HOST=${MARIADB_HOST}
+      - MARIADB_PORT=${MARIADB_PORT}
+      - MARIADB_USER=${MARIADB_USER}
+      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
+      - MARIADB_DATABASE=${MARIADB_DATABASE}
 
   ### Base de données MariaDB
   mariadb:
@@ -89,6 +97,8 @@ services:
       MARIADB_DATABASE: ${MARIADB_DATABASE}
     ports:
       - "3306:3306"
+    volumes:
+      - amazing_data:/var/lib/mysql
     networks:
       - db
 
@@ -113,3 +123,6 @@ services:
 networks:
   backend:
   db:
+
+volumes:
+  amazing_data:

@@ -1,0 +1,9 @@
+[submodule "amazing_gateway"]
+	path = amazing_gateway
+	url = https://github.com/MathieuRocher/amazing_gateway
+[submodule "amazing_form"]
+	path = amazing_form
+	url = https://github.com/MathieuRocher/amazing_form
+[submodule "amazing_review"]
+	path = amazing_review
+	url = https://github.com/MathieuRocher/amazing_review
