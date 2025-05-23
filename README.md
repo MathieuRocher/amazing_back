@@ -51,7 +51,7 @@ Le projet est composé de plusieurs services Dockerisés :
 ## Lancer le projet
 ### 1. Prérequis
 - Docker + Docker Compose
-- Un .env à la racine avec les variables suivantes :
+- Un .env à la racine avec les variables suivantes (à modifier au besoin) :
 
 ```bash
 # Ports
@@ -91,4 +91,5 @@ docker compose up --build
 
 ## Démarches pas abouties
 - On a tester de mettre ne place un LLM (ollama llama3), mais on s'est rendu que le faire tourner sur CPU était beaucoup trop consommateur, on a donc préférer de pas le mettre en place pour s'éviter une perte de temps trop importante
-- Ayant une base très simple, on ne trouvait pas les tests très pertinents dans notre cas, ou alors trop complexe pour rien. 
+- Ayant une base très simple, on ne trouvait pas les tests très pertinents dans notre cas, ou alors trop complexe pour rien.
+- Un système de cache a été mis en place dans le projet, mais il n’est pas encore utilisé. Il est prêt pour être activé plus tard si besoin, par exemple pour accélérer certaines requêtes.
