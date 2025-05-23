@@ -90,6 +90,6 @@ docker compose up --build
 - L’usage de Traefik permet un routage souple et indépendant des ports exposés
 
 ## Démarches pas abouties
-- On a tester de mettre ne place un LLM (ollama llama3), mais on s'est rendu que le faire tourner sur CPU était beaucoup trop consommateur, on a donc préférer de pas le mettre en place pour s'éviter une perte de temps trop importante
-- Ayant une base très simple, on ne trouvait pas les tests très pertinents dans notre cas, ou alors trop complexe pour rien.
-- Un système de cache a été mis en place dans le projet, mais il n’est pas encore utilisé. Il est prêt pour être activé plus tard si besoin, par exemple pour accélérer certaines requêtes.
+- Nous avons tenté d’intégrer un LLM (llama3 via Ollama), mais son exécution sur CPU s’est révélée trop coûteuse en ressources. Nous avons donc préféré ne pas le déployer afin d’éviter une perte de temps inutile.
+- Étant donné la simplicité de notre base fonctionnelle, nous avons estimé que des tests poussés n’étaient pas très pertinents dans notre cas, ou bien trop complexes à mettre en place pour un bénéfice limité.
+- Un système de cache a été intégré dans le projet, mais il n’est pas encore utilisé. Il est prêt à être activé ultérieurement si nécessaire, par exemple pour optimiser certaines requêtes.
